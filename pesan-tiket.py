@@ -1,30 +1,30 @@
+def judul():
+    print("==================== HOTEL DEL LUNA ====================")
+
 def line():
-    print("=========================")
+    print("---------------------------------------")
 
-print("Selamat Datang di Hotel Del Luna")
+judul()
+print("Ketikan tipe kamar yang ingin Kamu singgahi")
+print("1. Superior, harga Rp. 500.000")
+print("2. Deluxe, harga Rp. 300.000")
+print("3. Premium, harga Rp. 250.000")
+tipe = input("Masukkan Tipe Kamar: ")
+inap = int(input("Berapa lama Anda menginap: "))
 
-print("Tipe Kamar: Superior, Deluxe, Premium")
-room_type = input("Masukkan Tipe Kamar: ")
-lama_inap = int(input("Masukkan Lama Anda Menginap: "))
-
-if room_type == "Superior":
-    if lama_inap <= 2:
-        price = 200000 * lama_inap
-    elif lama_inap <= 4:
-        price = 200000 * lama_inap
-    elif lama_inap >= 5:
-        price = 600000
-elif room_type == "Deluxe":
-    if lama_inap <= 2:
-        price = 150000 * lama_inap
-    elif lama_inap >= 4:
-        price = 150000 * lama_inap
-elif room_type == "Premium":
-    if lama_inap <= 2:
-        price = 100000 * lama_inap
-    elif lama_inap >= 4:
-        price = 100000 * lama_inap
-
+# Logic
+if tipe == "Superior" or "superior":
+    harga = 500000 * inap
+elif tipe == "Deluxe" or "deluxe":
+    harga = 300000 * inap
+elif tipe == "Premium" or "premium":
+    harga = 250000 * inap
+else:
+    print("Keyword Error!")
+    
+# Pernyataan
 line()
-print("Kamar",room_type,"telah dipilih, dengan lama inap selama",lama_inap,"hari")
-print("Harga kamar sebesar",price,"Rupiah")
+print(f"Pemesanan", inap,"hari")
+print(f"Anda telah memesan kamar bertipe", tipe, 
+      "dengan harga Rp.",harga)
+judul()
